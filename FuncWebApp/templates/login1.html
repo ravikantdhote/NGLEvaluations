@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Pure CSS Login Form</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="C:\Users\HP\Desktop\DRF-Project\DjFunWebApp\FuncWebApp\static\style33.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="center">
+          <h1>Login</h1>
+          <form action="" method="POST">
+            {% csrf_token %}
+              <div class="txt_field">
+                  <input type="text" name="username" required id="">
+                  <span></span>
+                  <label>Username</label>
+              </div>
+              <div class="txt_field">
+                  <input type="password" name="password" required id="">
+                  <span></span>
+                  <label>Password</label>
+              </div>
+              
+              <input name="submit" type="Submit" value="Login">
+              <div class="signup_link">
+                  Not a Member ? <a href="register">Register</a>
+              </div>
+          </form>
+        
+          <div>
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

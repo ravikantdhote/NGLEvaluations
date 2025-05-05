@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <title>Sign Up / Registration Form </title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="static/style2.css" />
+  </head>
+
+<body>
+  <div class="container">
+    <div class="center">
+        <h1>Register</h1>
+        <form method="POST" action="">
+
+            {% csrf_token %}
+
+            <div class="txt_field">
+                <input type="text" name="first_name" required id="">
+                <span></span>
+                <label>First Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="last_name" required id="">
+                <span></span>
+                <label>Last Name</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="username" required id="">
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" required id="">
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password1" required id="">
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password2" required id="">
+                <span></span>
+                <label>Confirm Password</label>
+            </div>
+            <input name="submit" type="Submit" value="Register">
+            <div class="signup_link">
+                Have an Account ? <a href="login">Login Here</a>
+            </div>
+        </form>
+
+    </div>
+
+        <div>
+            {% for message in messages %}
+            <h3>{{message}}</h3>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
